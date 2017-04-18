@@ -22,7 +22,7 @@ Feedback is appreciated!
 # Demo & Download
 👁 **[Live Demo](http://theme-kompact.jessedobbelae.re)**
 
-👉 **[Free Download](https://github.com/jessedobbelaere/kompact/archive/master.zip)**
+👉 **[Free Download](https://github.com/jessedobbelaere/fork-cms-theme-kompact/archive/master.zip)**
 
 🔥 [More Fork CMS themes](http://www.fork-cms.com/extensions/themes)
 
