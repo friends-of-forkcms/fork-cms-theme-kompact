@@ -1,0 +1,41 @@
+{#
+  variables that are available:
+  - {{ item }}: contains data about the post
+  - {{ comments }}: contains an array with the comments for the post, each element contains data about the comment.
+  - {{ commentsCount }}: contains a variable with the number of comments for this blog post.
+  - {{ navigation }}: contains an array with data for previous and next post
+#}
+
+<article class="article index">
+    <header>
+        <h1>{{ item.title }}</h1>
+    </header>
+    <div class="text">
+        {% if item.introduction %}
+            {{ item.introduction|raw }}
+        {% endif %}
+
+        {% if item.image %}
+            <figure>
+                <img src="{{ FRONTEND_FILES_URL }}/blog/images/source/{{ item.image }}" alt="{{ item.title }}" itemprop="image" />
+            </figure>
+        {% endif %}
+
+        {{ item.text|raw }}
+    </div>
+    <br>
+    <div class="article-date"><time itemprop="datePublished" datetime="{{ item.publish_on|date('Y-m-d\TH:i:s') }}">{{ item.publish_on|date("F jS, Y") }}</time></div>
+</article>
+<hr>
+
+{% if navigation.previous %}
+    <strong>Read Previous</strong>
+    <br>
+    <a href="{{ navigation.previous.url }}" rel="previous" class="h1">{{ navigation.previous.title }}</a>→
+    <hr>
+{% else %}
+    <strong>Start Over</strong>
+    <br>
+    <a href="{{ geturlforblock('Blog') }}" class="h1">{{ 'lbl.Blog'|trans|ucfirst }}</a>→
+    <hr>
+{% endif %}

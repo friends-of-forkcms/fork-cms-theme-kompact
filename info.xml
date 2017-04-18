@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <name>Kompact</name>
+    <version>1.0.0</version>
+    <requirements>
+        <minimum_version>4.0.0</minimum_version>
+    </requirements>
+    <thumbnail>thumbnail.png</thumbnail>
+    <description>
+        <![CDATA[
+        Kompact
+        ]]>
+    </description>
+    <authors>
+        <author>
+            <name>Joro Yordanov</name>
+            <url>http://www.yordanoff.net</url>
+        </author>
+        <author>
+            <name>Jesse Dobbelaere</name>
+            <url>http://www.jessedobbelae.re</url>
+        </author>
+    </authors>
+    <metanavigation supported="false" />
+    <templates>
+        <template label="Default Page" path="Core/Layout/Templates/Default.html.twig">
+            <positions>
+                <position name="main">
+                </position>
+                <position name="cta">
+                </position>
+            </positions>
+            <format>
+                [main],[cta]
+            </format>
+        </template>
+        <template label="Home" path="Core/Layout/Templates/Home.html.twig">
+            <positions>
+                <position name="intro">
+                </position>
+                <position name="main">
+                </position>
+                <position name="cta">
+                </position>
+            </positions>
+            <format>
+                [intro],[main],[cta]
+            </format>
+        </template>
+    </templates>
+</theme>

@@ -1,0 +1,10 @@
+{% if navigation %}
+  <ul class="menu cf">
+    {% for nav in navigation %}
+      <li>
+        <a href="{{ nav.link }}" class="al" title="{{ nav.navigation_title }}"{% if nav.nofollow %} rel="nofollow"{% endif %}>{{ nav.navigation_title|raw }}</a>
+        {% if nav.selected %}{{ nav.children|raw }}{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

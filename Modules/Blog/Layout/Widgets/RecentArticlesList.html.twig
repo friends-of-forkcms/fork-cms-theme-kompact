@@ -1,0 +1,32 @@
+{#
+  variables that are available:
+  - {{ widgetBlogRecentArticlesList }}: contains an array with all posts, each element contains data about the post
+#}
+
+{% if widgetBlogRecentArticlesList %}
+    <section>
+        {% for article in widgetBlogRecentArticlesList %}
+            <article class="article index">
+                <header>
+                    <h2><a href="{{ article.full_url }}" class="al" title="{{ article.title }}">{{ article.title }}</a></h2>
+                </header>
+
+                <div class="text">
+                    <p>
+                        {% if article.introduction %}
+                            {% set introduction = article.introduction|striptags %}
+                        {% else %}
+                            {% set introduction = article.text|striptags %}
+                        {% endif %}
+                        {{ introduction|length > 276 ? introduction|slice(0, 276) ~ '...' : introduction  }}
+
+                        <a href="{{ article.full_url }}" class="al article-more">→</a>
+                    </p>
+                </div>
+                <br>
+                <p class="article-date"><time itemprop="datePublished" datetime="{{ item.publish_on|date('Y-m-d\TH:i:s') }}">{{ item.publish_on|date("F jS, Y") }}</time></p>
+                <hr>
+            </article>
+        {% endfor %}
+    </section>
+{% endif %}

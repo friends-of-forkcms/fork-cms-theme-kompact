@@ -1,0 +1,76 @@
+{% include "Core/Layout/Templates/Head.html.twig" %}
+
+<body class="{{ LANGUAGE }}" itemscope itemtype="http://schema.org/WebPage">
+
+{# Navigation #}
+<aside>
+    {{ getnavigation('page', 0, 1) }}
+</aside>
+
+<div id="canvas">
+    <header class="header wrap-fluid cf" role="banner">
+        <div class="wrap-fluid">
+            <a href="/" class="logo al" rel="home">{{ siteTitle }}</a>
+        </div>
+
+        <div class="hamburger-container">
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="container">
+        <div class="wrap-fluid">
+            {# Intro position #}
+            {% for intro in positions.intro %}
+                {% if intro.html %}
+                    <div class="h1">
+                        {{ intro.html|raw }}
+                    </div>
+                    <hr>
+                {% endif %}
+            {% endfor %}
+
+            {# Main position #}
+            {% for main in positions.main %}
+                {% if main.html %}
+                    {{ main.html|raw }}
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="cf"></div>
+
+        <div class="wrap-fluid">
+            {# CTA position #}
+            {% for cta in positions.cta %}
+                <div class="h1">
+                    {% if cta.html %}
+                        {{ cta.html|raw }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="cf"></div>
+
+        {% include "Core/Layout/Templates/Footer.html.twig" %}
+    </div>
+</div>
+
+{# General Javascript #}
+{% for js in jsFiles %}
+    <script src="{{ js.file }}"></script>
+{% endfor %}
+
+{# Theme specific Javascript #}
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/animsition.min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/main.js"></script>
+
+{# Site wide HTML #}
+{{ siteHTMLFooter|raw }}
+
+</body>
+</html>
