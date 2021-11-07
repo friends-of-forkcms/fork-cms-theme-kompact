@@ -1,9 +1,9 @@
 # Kompact - A Free Fork CMS CMS Theme
 
-![](http://themes.yordanoff.net/kompact/kompact-00.gif)
+![Fork CMS theme - Kompact](./kompact-01.gif)
 
 Kompact is a **Free** [Fork CMS](http://www.fork-cms.com/) theme, built with a minimalistic approach in mind, so you can focus on the content.
-Kompact was originally made for Kirby CMS by [Joro Yordanov](http://yordanoff.net/) and can be found [here](https://github.com/yordanoff/kompact). 
+Kompact was originally made for Kirby CMS by [Joro Yordanov](http://yordanoff.net/) and can be found [here](https://github.com/yordanoff/kompact).
 
 # Features
 * Minimal design with focus on *typography* and *white space*
